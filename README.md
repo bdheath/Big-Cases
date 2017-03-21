@@ -16,3 +16,7 @@ Big-Cases uses three main Python scripts to gather docket entries, scrape docket
 ## Settings and lists of stuff
 
 The list of cases Big-Cases is following is stored in **bigcases_list.py**; the list of available PACER RSS feeds is stored in **pacer_rss_feeds.py**. 
+
+## Other stuff to know
+
+Big-Cases has only been tested on a machine running CentOS Linux 7. 
