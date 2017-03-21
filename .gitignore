@@ -9,7 +9,7 @@ Desktop.ini
 *.pyc
 
 # Private settings file
-bigcases_settings.py
+
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/

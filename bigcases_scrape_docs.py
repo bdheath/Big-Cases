@@ -104,7 +104,7 @@ def getDocument(pid, url):
 		
 		# Now fish out the most recent file and stick it where you want it
 		
-		files = glob.glob(settings.file_temp_path + '*')
+		files = glob.glob(settings.file_temp_path + '/*')
 		files.sort(key=os.path.getmtime, reverse=True)
 		if len(files) >= 2:
 			newfn = settings.file_archive_path + '/document-' + str(pid) + '.pdf'
