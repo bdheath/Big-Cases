@@ -45,7 +45,6 @@ cases = [
 	{ 'name':'Chicago v. Sessions (Sanctuary cities EO)', 'case_number':'1:17-cv-05720', 'court':'N.D. Ill.' },
 	{ 'name':'Marshal Coal v. @iamjohnoliver', 'case_number':'5:17-cv-00099',  'court':'N.D. W.Va.' },
 	{ 'name':'@SarahPalinUSA v. @NYTimes', 'case_number':'1:17-cv-04853', 'court':'S.D.N.Y.' },
-#	{ 'name':'Waymo v. @Uber', 'case_number':'3:17-cv-00939', 'court':'N.D. Cal.' },
 	{ 'name':'Horse v. D.C.', 'case_number':'1:17-cv-01216', 'court':'D.D.C.' },
 	{ 'name':'United States v. @MalwareTechBlog', 'case_number':'2:17-cr-00124-2', 'court':'E.D. Wis.' },
 	{ 'name':'@ACLU_NorCal v. Sessions', 'case_number':'3:17-cv-03615', 'court':'N.D. Cal.' },
@@ -70,5 +69,8 @@ cases = [
 	{ 'name':'Fusion GPS v. John Doe Bank', 'case_number':'1:17-cv-02187', 'court':'D.D.C.' },
 	{ 'name':'United States v. AT&T and Time Warner', 'case_number':'1:17-cv-02511', 'court':'D.D.C.' },
 	{ 'name':'English v. Trump', 'case_number':'1:17-cv-02534', 'court':'D.D.C.' },
-	
+	{ 'name':'Freedom Watch v. Sessions', 'case_number':'1:17-cv-02459', 'court':'D.D.C.' }, 
+	{ 'name':'Waymo v. @Uber', 'case_number':'3:17-cv-00939', 'court':'N.D. Cal.' },
+	{'name':'@ACLU v. Mattis', 'case_number':'1:17-cv-02069', 'court':'D.D.C.' },
+	{'name':'United States v. Mike Flynn','case_number':'1:17-cr-00232-1', 'court':'D.D.C.' },
 ]
