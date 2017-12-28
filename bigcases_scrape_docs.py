@@ -114,7 +114,16 @@ def getDocument(case, url):
 			shutil.move(files[0], newfn)
 			
 			dcid = None
-			dcdoc = dc.documents.upload(newfn, source='U.S. District Court via big_cases bot', project = settings.dc_project_id, access = ACCESS)
+
+			# source isn't publicly visible; description is public & free-form text.
+			dcdoc = dc.documents.upload(
+				newfn,
+				source='U.S. District Court via big_cases bot',
+				description='%s in %s (%s, %s) dated %s from %s' % (
+					case['description]', case['title'], case['case_number'],
+					case['court'], case['pubdate'], case['link']),
+				project = settings.dc_project_id,
+				access = ACCESS)
 			
 			print '   - DocumentCloud: ' + str(dcdoc.id)
 			
