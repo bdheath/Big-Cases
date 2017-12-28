@@ -52,9 +52,11 @@ def handleLogin():
 	br.find_element_by_name('login:clientCode').send_keys(Keys.RETURN)
 	time.sleep(3)
 	
-def getDocument(pid, url):
+def getDocument(case, url):
 	global waittime
 	global br
+
+	pid = case['pid']
 
 	br.get(url)
 	time.sleep(2)
@@ -171,9 +173,10 @@ if __name__ == '__main__':
 
 						
 			for case in cases:
-				if URL.search(case['description']):
+				url = URL.search(case['description'])
+				if url:
 					print ' - ' + case['title'] + ' (' + case['court'] + ')'
-					getDocument(case['pid'], URL.search(case['description']).group(1))
+					getDocument(case, url.group(1))
 				
 			br.quit()
 			display.stop()
