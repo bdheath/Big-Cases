@@ -94,7 +94,7 @@ def getDocument(pid, url):
 	
 	print '   - price: ' + str(price)
 	
-	# Now fetch the document if it's price is less than the max cost
+	# Now fetch the document if its price is less than the max cost
 	if price <= settings.pacer_max_price and price is not None:
 		print '   - extract'
 		#br.find_element_by_xpath("//input[@type='submit']").click()
