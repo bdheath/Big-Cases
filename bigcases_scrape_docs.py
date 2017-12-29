@@ -1,16 +1,17 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
-import re
 import dbconnect
-from documentcloud import DocumentCloud
-import time
-from urlparse import urljoin
 import glob
-import shutil
 import os
-from xvfbwrapper import Xvfb
+import re
+import shutil
+import time
+
 from bigcases_settings import settings
+from documentcloud import DocumentCloud
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
+from urlparse import urljoin
+from xvfbwrapper import Xvfb
 
 waittime = 10
 
