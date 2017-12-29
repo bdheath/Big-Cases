@@ -7,6 +7,7 @@ import time
 
 from bigcases_settings import settings
 from documentcloud import DocumentCloud
+from recapupload import RecapUpload
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
@@ -141,6 +142,13 @@ def getDocument(case, url):
 						bigcase = 3
 					WHERE pid = %s """,
 					(dcdoc.id, str(dcdoc.published_url), price, pid, ))
+
+                        # While DocumentCloud processes the document, upload it to RECAP
+                        recap = RecapUpload(newfn,
+                                            case['case_number'],
+                                            case['title'],
+                                            case['pubdate'],
+                                            case['description'])
 
 			# Wait until the document is public
 			obj = dc.documents.get(dcdoc.id)
