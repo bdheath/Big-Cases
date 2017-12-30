@@ -36,7 +36,7 @@ VERBOSE = 1
 class RecapUpload(object):
     """Upload a document to the RECAP archive."""
 
-    def pacerCourtToCL(self, pacerCourt):
+    def PACER_Court_to_CL(self, PACER_court):
         # An unfortunate design decision was made in the past.
         PACER_TO_CL_IDS = {
             'azb': 'arb',         # Arizona Bankruptcy Court
@@ -45,12 +45,12 @@ class RecapUpload(object):
             'nysb-mega': 'nysb',  # Remove the mega thing
         }
 
-        return PACER_TO_CL_IDS.get(pacerCourt, pacerCourt)
+        return PACER_TO_CL_IDS.get(PACER_court, PACER_court)
 
     def __init__(self, filename,
-                 docketNumber, docketCaption,
-                 publishedDate,
-                 itemDescription):
+                 docket_number, docket_caption,
+                 published_date,
+                 item_description):
         """Upload a document to the RECAP archive.
 
         We do based on what little information we have. This involves
@@ -61,12 +61,12 @@ class RecapUpload(object):
         because it takes a trip through a SQL database.
 
         PARAMETER: SOURCE
-          docketNumber and docketCaption:        item.title
-          publishedDate:                         item.published
-          itemDescription:                       item.description
+          docket_number and docket_caption:      item.title
+          published_date:                        item.published
+          item_description:                      item.description
 
         Outline:
-        1. We first parse the itemDescription to get the docket text,
+        1. We first parse the item_description to get the docket text,
            the item URL (including DLS aka "doc1" number), and the
            entry number (link anchor).
         2. We lookup the case, or determine we need to fake it.
@@ -79,10 +79,10 @@ class RecapUpload(object):
             # Not a valid token
             return None
 
-        # #1. We first parse the itemDescription to get the docket text,
+        # #1. We first parse the item_description to get the docket text,
 
         h = HTMLParser()
-        itemDecoded = h.unescape(itemDescription)
+        itemDecoded = h.unescape(item_description)
 # BEFORE unescape() call:
 # [Motion For Order] (<a href="https://ecf.dcd.uscourts.gov/
 # doc1/04506366063?caseid=190182&amp;de_seq_num=369">94</a>)
@@ -117,16 +117,16 @@ class RecapUpload(object):
             # to 0 when getting a doc ID.
             pacer_doc_id = pacer_doc_id[0:3] + '0' + pacer_doc_id[4:]
 
-        parsedUrl = urlparse.urlparse(url)
-        court = self.pacerCourtToCL(parsedUrl.hostname.split('.')[1])
-        qparams = urlparse.parse_qs(parsedUrl.query)
+        parsed_url = urlparse.urlparse(url)
+        court = self.PACER_Court_to_CL(parsed_url.hostname.split('.')[1])
+        qparams = urlparse.parse_qs(parsed_url.query)
 
         pacer_case_id = qparams['caseid'][0]
 
         # #2. We lookup the case, or determine we need to fake it.
 
-        needFakeCase = False
-        needFakeEntry = False
+        need_fake_case = False
+        need_fake_entry = False
         if VERBOSE > 0:
             print "Checking RECAP for case %s in %s" % (pacer_case_id, court)
         # /dockets/?pacer_case_id=189311&court=mad
@@ -144,7 +144,7 @@ class RecapUpload(object):
         if (not r.ok) or rj['count'] < 1:
             if VERBOSE > 0:
                 print "RECAP docket doesn't exist. We need to fake one up."
-            needFakeCase = True
+            need_fake_case = True
         else:
             # The CL docket ID, needed for the next query, is here:
             # "resource_uri":
@@ -153,7 +153,7 @@ class RecapUpload(object):
                                      rj['results'][0]['resource_uri']).group(1)
 
         # #3. We lookup the docket entry, or determine we need to fake it.
-        if not needFakeCase:
+        if not need_fake_case:
             # If we don't have a case, we need not check for a docket entry
             if VERBOSE > 0:
                 print "Checking RECAP for entry %s in CL case %s" \
@@ -198,21 +198,21 @@ class RecapUpload(object):
                 if VERBOSE > 0:
                     print "The docket ENTRY doesn't exist. " + \
                         "We need to fake one up."
-                needFakeEntry = True
+                need_fake_entry = True
 
         # #4. If necessary, we fake the docket entry and case title.
-        if needFakeCase or needFakeEntry:
+        if need_fake_case or need_fake_entry:
             # Either because of the case docket or the docket entry's absence
             # we must fake up a docket.
             date = time.strftime('%m/%d/%Y',
-                                 feedparser._parse_date(publishedDate))
+                                 feedparser._parse_date(published_date))
             html = ''
             html += '<h3>THIS IS A FAKED UP DOCKET VIA RSS THROUGH '
             html += 'recapupload.py<br>\n'
-            html += '%s</h3>\n' % docketNumber
+            html += '%s</h3>\n' % docket_number
             html += '<table>'
-            if needFakeCase:
-                html += '<td><br>%s' % docketCaption
+            if need_fake_case:
+                html += '<td><br>%s' % docket_caption
             # Lack of whitespace after this colon matters!
             html += '<td>Date Filed:</table>\n'
             html += '<table>'
