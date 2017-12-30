@@ -29,7 +29,7 @@ from bigcases_settings import settings
 
 
 API_BASE = 'https://www.courtlistener.com/api/rest/v3/'
-VERBOSE = 2
+VERBOSE = 1
 
 
 class RecapUpload(object):
