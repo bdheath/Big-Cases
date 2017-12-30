@@ -29,6 +29,7 @@ from bigcases_settings import settings
 
 
 API_BASE = 'https://www.courtlistener.com/api/rest/v3/'
+TIMEOUTS = (60, 300)  # 1 minute connect timeout, 5 min. read timeout
 VERBOSE = 1
 
 
@@ -134,6 +135,7 @@ class RecapUpload(object):
             headers={'Authorization': 'Token %s' % settings.recap_token},
             params={'court': court,
                     'pacer_case_id': pacer_case_id},
+            timeout=TIMEOUTS,
         )
         if VERBOSE >= 2:
             print "Returns:", r, r.text
@@ -173,7 +175,8 @@ class RecapUpload(object):
                 params={
                     'docket': cl_docket_id,
                     'entry_number': entry_number,
-                }
+                },
+                timeout=TIMEOUTS,
             )
             if VERBOSE >= 2:
                 print "Returns: ", r
@@ -235,6 +238,7 @@ class RecapUpload(object):
                     'debug': 'false',  # Server throws away in debug mode
                 },
                 files=files,
+                timeout=TIMEOUTS,
             )
             if VERBOSE >= 2:
                 print "Returns: ", r, r.text
@@ -257,6 +261,7 @@ class RecapUpload(object):
                 'debug': 'false',  # Server throws away in debug mode
             },
             files=files,
+            timeout=TIMEOUTS,
         )
         if VERBOSE > 0:
             print "RECAP upload returns: ", r, r.text
