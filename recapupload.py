@@ -42,7 +42,7 @@ class RecapUpload(object):
             'azb': 'arb',         # Arizona Bankruptcy Court
             'cofc': 'uscfc',      # Court of Federal Claims
             'neb': 'nebraskab',   # Nebraska Bankruptcy
-            'nysb-mega': 'nysb',   # Remove the mega thing
+            'nysb-mega': 'nysb',  # Remove the mega thing
         }
 
         return PACER_TO_CL_IDS.get(pacerCourt, pacerCourt)
