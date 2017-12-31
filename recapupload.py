@@ -33,6 +33,15 @@ TIMEOUTS = (60, 300)  # 1 minute connect timeout, 5 min. read timeout
 VERBOSE = 1
 
 
+class _UploadType():
+    DOCKET = 1
+    ATTACHMENT_PAGE = 2
+    PDF = 3
+    DOCKET_HISTORY_REPORT = 4
+    APPELLATE_DOCKET = 5
+    APPELLATE_ATTACHMENT_PAGE = 6
+
+
 class RecapUpload(object):
     """Upload a document to the RECAP archive."""
 
@@ -232,7 +241,7 @@ class RecapUpload(object):
                 url=API_BASE+'recap/',
                 headers={'Authorization': 'Token %s' % settings.recap_token},
                 data={
-                    'upload_type': '1',
+                    'upload_type': _UploadType.DOCKET,
                     'court': court,
                     'pacer_case_id': pacer_case_id,
                     'debug': 'false',  # Server throws away in debug mode
@@ -253,7 +262,7 @@ class RecapUpload(object):
             url=API_BASE+'recap/',
             headers={'Authorization': 'Token %s' % settings.recap_token},
             data={
-                'upload_type': '3',
+                'upload_type': _UploadType.PDF,
                 'court': court,
                 'pacer_case_id': pacer_case_id,
                 'pacer_doc_id': pacer_doc_id,
