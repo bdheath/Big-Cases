@@ -32,3 +32,5 @@ class settings:
 	twitter_oauth_key = ''
 	twitter_oauth_secret = ''
 
+        # RECAP credentials
+        recap_token=''

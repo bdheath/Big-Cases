@@ -1,16 +1,18 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.options import Options
-import re
 import dbconnect
-from documentcloud import DocumentCloud
-import time
-from urlparse import urljoin
 import glob
-import shutil
 import os
-from xvfbwrapper import Xvfb
+import re
+import shutil
+import time
+
 from bigcases_settings import settings
+from documentcloud import DocumentCloud
+from recapupload import RecapUpload
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
+from urlparse import urljoin
+from xvfbwrapper import Xvfb
 
 waittime = 10
 
@@ -52,9 +54,11 @@ def handleLogin():
 	br.find_element_by_name('login:clientCode').send_keys(Keys.RETURN)
 	time.sleep(3)
 	
-def getDocument(pid, url):
+def getDocument(case, url):
 	global waittime
 	global br
+
+	pid = case['pid']
 
 	br.get(url)
 	time.sleep(2)
@@ -94,7 +98,7 @@ def getDocument(pid, url):
 	
 	print '   - price: ' + str(price)
 	
-	# Now fetch the document if it's price is less than the max cost
+	# Now fetch the document if its price is less than the max cost
 	if price <= settings.pacer_max_price and price is not None:
 		print '   - extract'
 		#br.find_element_by_xpath("//input[@type='submit']").click()
@@ -112,7 +116,16 @@ def getDocument(pid, url):
 			shutil.move(files[0], newfn)
 			
 			dcid = None
-			dcdoc = dc.documents.upload(newfn, source='U.S. District Court via big_cases bot', project = settings.dc_project_id, access = ACCESS)
+
+			# source isn't publicly visible; description is public & free-form text.
+			dcdoc = dc.documents.upload(
+				newfn,
+				source='U.S. District Court via big_cases bot',
+				description='%s in %s (%s, %s) dated %s from %s' % (
+					case['description]', case['title'], case['case_number'],
+					case['court'], case['pubdate'], case['link']),
+				project = settings.dc_project_id,
+				access = ACCESS)
 			
 			print '   - DocumentCloud: ' + str(dcdoc.id)
 			
@@ -129,6 +142,13 @@ def getDocument(pid, url):
 						bigcase = 3
 					WHERE pid = %s """,
 					(dcdoc.id, str(dcdoc.published_url), price, pid, ))
+
+                        # While DocumentCloud processes the document, upload it to RECAP
+                        recap = RecapUpload(newfn,
+                                            case['case_number'],
+                                            case['title'],
+                                            case['pubdate'],
+                                            case['description'])
 
 			# Wait until the document is public
 			obj = dc.documents.get(dcdoc.id)
@@ -171,9 +191,10 @@ if __name__ == '__main__':
 
 						
 			for case in cases:
-				if URL.search(case['description']):
+				url = URL.search(case['description'])
+				if url:
 					print ' - ' + case['title'] + ' (' + case['court'] + ')'
-					getDocument(case['pid'], URL.search(case['description']).group(1))
+					getDocument(case, url.group(1))
 				
 			br.quit()
 			display.stop()

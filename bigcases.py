@@ -86,7 +86,7 @@ class caseShare:
 				media_ids = self.twitter_upload(images)
 			
 		elif DP1.search(d):
-			# If the document ahsn't maded it to DC, send the PACER link
+			# If the document hasn't made it to DC, send the PACER link
 			link = DP1.search(d).group(2)
 			nd = DP1.search(d).group(1) + '\n\nDoc. on PACER: ' + link
 		elif DP2.search(d):
