@@ -1,3 +1,29 @@
+cases_sct = [
+	{ 'name': 'Gill v. Whitford', 'case_number':'16-285' },
+	{ 'name': 'Trump v. Hawaii', 'case_number':'17-965' },
+	{ 'name': 'Abbott v. Perez', 'case_number':'17-626' },
+	{ 'name': 'Abbott v. Perez', 'case_number':'17-586' },
+	{ 'name': 'Masterpiece Cake Shop v. Colorado Civil Rights Comm\'n', 'case_number':'16-111' },
+	{ 'name': 'Carpenter v. United States', 'case_number':'16-402' },
+	{ 'name': 'Christie v. NCAA', 'case_number':'16-476' },
+	{ 'name': 'Rubin v. Iran', 'case_number':'16-534' },
+	{ 'name': 'Byrd v. United States', 'case_number':'16-1371' },
+	{ 'name': 'Collins v. Virginia', 'case_number':'16-1072' },
+	{ 'name': 'Dalmazzi v. United States', 'case_number':'16-961' },
+	{ 'name': 'McCoy v. Louisiana', 'case_number':'16-1362' },
+	{ 'name': 'City of Hays v. Vogt', 'case_number':'16-1495' },
+	{ 'name': 'Currier v. Virginia', 'case_number':'16-1348' },
+	{ 'name': 'Dahda v. United States', 'case_number':'17-43' },
+	{ 'name': 'Janus v. AFSCME Council 31', 'case_number':'16-1466' },
+	{ 'name': 'United States v. Microsoft', 'case_number':'17-2' },
+	{ 'name': 'Lozman v. Riviera Beach, Fla.', 'case_number':'17-21' },
+	{ 'name': 'Minnesota Voters Alliance v. Mansky', 'case_number':'16-1435' },
+	{ 'name': 'Sveen v. Melin', 'case_number':'16-1432' },
+	{ 'name': 'Nat\'l Inst. of Family and Life v. Becerra', 'case_number':'16-1140' },
+	{ 'name': 'Lucia v. SEC', 'case_number':'17-130' },
+	{ 'name': 'Benisek v. Lamone', 'case_number':'17-333' },
+]
+
 cases = [
 	{ 'name':  'Mass. travel EO case', 'case_number': '1:17-cv-10154', 'court': 'D. Mass.' },
 	{ 'name': 'EDNY travel EO case', 'case_number': '1:17-cv-00480', 'court':'E.D.N.Y.' },
@@ -28,7 +54,7 @@ cases = [
 	{ 'name':'John and Jane Doe v. Trump', 'case_number':'1:17-cv-00537', 'court':'D.D.C.' },
 	{ 'name':'@USATODAY, @AP, @VICE v. DOJ (iPhone crack)', 'case_number':'1:16-cv-01850', 'court':'D.D.C.' },
 	{ 'name':'Trump FISA info #FOIA case',  'case_number':'1:17-cv-00597', 'court':'D.D.C.' },
-	{ 'name':'ACLU v. Brown County, Miss.', 'case_number':'3:17-cv-00347', 'court':'S.D. Miss.' }, 
+	{ 'name':'ACLU v. Madison County, Miss.', 'case_number':'3:17-cv-00347', 'court':'S.D. Miss.' }, 
 	{ 'name':'Trump University case', 'case_number':'3:13-cv-02519', 'court':'S.D. Cal.' },
 	{ 'name':'CREW v. Trump Emoluments case', 'case_number':'1:17-cv-00458', 'court':'S.D.N.Y.' },
 	{ 'name':'Nwanguma et al v. Trump', 'case_number':'3:16-cv-00247', 'court':'W.D. Ky.' },
@@ -36,6 +62,7 @@ cases = [
 	{ 'name':'@NYTimes v. FBI (Comey memos)', 'case_number':'1:17-cv-04558','court':'S.D.N.Y.' },
 	{ 'name': '@CNN, @USATODAY et al. v. FBI (Comey memos)', 'case_number':'1:17-cv-01167', 'court':'D.D.C.' },
 	{ 'name': '@EPICPrivacy v. Election Integrity Commn\'n', 'case_number':'1:17-cv-01320', 'court':'D.D.C.' },
+	{ 'name': 'United States v. @SenatorMenendez', 'case_number':'2:15-cr-00155-1', 'court':'D.N.J.' },
 	{ 'name': 'Cockrum v. Trump', 'case_number':'1:17-cv-01370', 'court':'D.D.C.' },
 	{ 'name':'Sen. Blumenthal et al., v. Trump', 'case_number':'1:17-cv-01154', 'court':'D.D.C.' },
 	{ 'name':'Knight Institute v. Trump', 'case_number':'1:17-cv-05205', 'court':'S.D.N.Y.' },
@@ -73,4 +100,6 @@ cases = [
 	{ 'name':'Waymo v. @Uber', 'case_number':'3:17-cv-00939', 'court':'N.D. Cal.' },
 	{'name':'@ACLU v. Mattis', 'case_number':'1:17-cv-02069', 'court':'D.D.C.' },
 	{'name':'United States v. Mike Flynn','case_number':'1:17-cr-00232-1', 'court':'D.D.C.' },
+	{'name':'Manafort v. DOJ, Mueller', 'case_number':'1:18-cv-00011', 'court':'D.D.C.' },
+	
 ]
