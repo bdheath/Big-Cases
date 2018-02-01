@@ -122,7 +122,7 @@ def getDocument(case, url):
 				newfn,
 				source='U.S. District Court via big_cases bot',
 				description='%s in %s (%s, %s) dated %s from %s' % (
-					case['description]', case['title'], case['case_number'],
+					case['description'], case['title'], case['case_number'],
 					case['court'], case['pubdate'], case['link']),
 				project = settings.dc_project_id,
 				access = ACCESS)
