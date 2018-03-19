@@ -141,7 +141,7 @@ def getDocument(case, url):
 						price = %s,
 						bigcase = 3
 					WHERE pid = %s """,
-					(dcdoc.id, str(dcdoc.published_url), price, pid, ))
+					(dcdoc.id[:49], str(dcdoc.published_url), price, pid, ))
 
                         # While DocumentCloud processes the document, upload it to RECAP
                         recap = RecapUpload(newfn,
