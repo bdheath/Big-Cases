@@ -1,96 +1,68 @@
 {
     "supreme_court_cases": [
         {
-            "name": "Gill v. Whitford", 
-            "case_number": "16-285"
+            "name": "In Re Grand Jury Subpoena", 
+            "case_number": "18A669"
         }, 
         {
-            "name": "Trump v. Hawaii", 
-            "case_number": "17-965"
+            "name": "Virginia House of Delegates v. Bethune-Hill", 
+            "case_number": "18-281"
         }, 
         {
-            "name": "Abbott v. Perez", 
-            "case_number": "17-626"
+            "name": "Kisor v. Wilkie", 
+            "case_number": "18-15"
         }, 
         {
-            "name": "Abbott v. Perez", 
-            "case_number": "17-586"
+            "name": "In Re Grand Jury Subpoena", 
+            "case_number": "18M93"
         }, 
         {
-            "name": "Masterpiece Cake Shop v. Colorado Civil Rights Comm\"n", 
-            "case_number": "16-111"
+            "name": "In Re Grand Jury Subpoena", 
+            "case_number": "18-948"
         }, 
         {
-            "name": "Carpenter v. United States", 
-            "case_number": "16-402"
+            "name": "Ramos v. Louisiana", 
+            "case_number": " 18-5924"
         }, 
         {
-            "name": "Christie v. NCAA", 
-            "case_number": "16-476"
+            "name": "Kahler v. Kansas", 
+            "case_number": "18-6135"
         }, 
         {
-            "name": "Rubin v. Iran", 
-            "case_number": "16-534"
+            "name": "Bostock v. Clayton County, Ga.", 
+            "case_number": "17-1618"
         }, 
         {
-            "name": "Byrd v. United States", 
-            "case_number": "16-1371"
+            "name": "Altitude Express v. Zarda", 
+            "case_number": "17-1623"
         }, 
         {
-            "name": "Collins v. Virginia", 
-            "case_number": "16-1072"
+            "name": "McAleenan v. Vidal", 
+            "case_number": "18-589"
         }, 
         {
-            "name": "Dalmazzi v. United States", 
-            "case_number": "16-961"
+            "name": "Trump v. NAACP", 
+            "case_number": "18-588"
         }, 
         {
-            "name": "McCoy v. Louisiana", 
-            "case_number": "16-1362"
+            "name": "Dep't of Homeland Security v. Univ. of California", 
+            "case_number": "18-587"
         }, 
         {
-            "name": "City of Hays v. Vogt", 
-            "case_number": "16-1495"
+            "name": "Kelly v. United States", 
+            "case_number": "18-1059"
         }, 
         {
-            "name": "Currier v. Virginia", 
-            "case_number": "16-1348"
+            "name": "Georgia v. Public.Resource.Org", 
+            "case_number": "18-1150"
         }, 
         {
-            "name": "Dahda v. United States", 
-            "case_number": "17-43"
+            "name": "New York State Rifle and Pistol Ass'n v. New York", 
+            "case_number": "18-280"
         }, 
         {
-            "name": "Janus v. AFSCME Council 31", 
-            "case_number": "16-1466"
-        }, 
-        {
-            "name": "United States v. Microsoft", 
-            "case_number": "17-2"
-        }, 
-        {
-            "name": "Lozman v. Riviera Beach, Fla.", 
-            "case_number": "17-21"
-        }, 
-        {
-            "name": "Minnesota Voters Alliance v. Mansky", 
-            "case_number": "16-1435"
-        }, 
-        {
-            "name": "Sveen v. Melin", 
-            "case_number": "16-1432"
-        }, 
-        {
-            "name": "Nat\"l Inst. of Family and Life v. Becerra", 
-            "case_number": "16-1140"
-        }, 
-        {
-            "name": "Lucia v. SEC", 
-            "case_number": "17-130"
-        }, 
-        {
-            "name": "Benisek v. Lamone", 
-            "case_number": "17-333"
+            "name": "Espinoza v. Montana Dep't of Revenue", 
+            "case_number": "18-1195"
         }
     ], 
     "cases": [
@@ -501,8 +473,13 @@
         }, 
         {
             "court": "D.D.C.", 
-            "name": "United States v. Internet Research Agency et al.", 
+            "name": "United States v. Internet Research Agency", 
             "case_number": "1:18-cr-00032-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Concord Management and Consulting, LLC", 
+            "case_number": "1:18-cr-00032-2"
         }, 
         {
             "court": "D.D.C.", 
@@ -523,6 +500,701 @@
             "court": "S.D.N.Y.", 
             "name": "Joel Rich v. @FoxNews", 
             "case_number": "1:18-cv-02223"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "@StormyDaniels v. @realDonaldTrump (California case)", 
+            "case_number": "2:18-cv-02217"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Rafatnejad", 
+            "case_number": "1:18-cr-00094-1"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "California v. Ross et al", 
+            "case_number": "3:18-cv-01865"
+        }, 
+        {
+            "court": "D. Ariz.", 
+            "name": "United States v. Michael Lacey (Backpage)", 
+            "case_number": "2:18-cr-00422-1"
+        }, 
+        {
+            "court": "D. Ariz.", 
+            "name": "United States v. Backpage.com", 
+            "case_number": "2:18-cr-00465-1"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "In the Matter of Search Warrants Executed on April 9, 2018", 
+            "case_number": "1:18-mj-03161-1"
+        }, 
+        {
+            "court": "D. Kan.", 
+            "name": "Fish et al v. Kobach et al", 
+            "case_number": "2:16-cv-02105"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "Democratic National Committee v. Russian Federation, @WikiLeaks et al.", 
+            "case_number": "1:18-cv-03501"
+        }, 
+        {
+            "court": "D.C. Cir.", 
+            "name": "18-5110 John Doe v. James Mattis", 
+            "case_number": "18-5110"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "@NAACP v. Trump", 
+            "case_number": "1:17-cv-01907"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "@AP, @CNN, @nytimes et al. v. United States", 
+            "case_number": "1:18-mc-00041"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Warmbier v. North Korea", 
+            "case_number": "1:18-cv-00977"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "@StormyDaniels v. @realDonaldTrump (New York case)", 
+            "case_number": "1:18-cv-03842"
+        }, 
+        {
+            "court": "S.D. Texas", 
+            "name": "State of Texas et al v. Nielsen et al", 
+            "case_number": "1:18-cv-00068"
+        }, 
+        {
+            "court": "D.C. Cir.", 
+            "name": "18-1087 Mary Spears, et al v. USA", 
+            "case_number": "18-1087"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "Matt Furie v. Infowars, LLC et al", 
+            "case_number": "2:18-cv-01830"
+        }, 
+        {
+            "court": "S.D. Cal.", 
+            "name": "Ms. L. v. Immigration and Customs Enforcement", 
+            "case_number": "3:18-cv-00428"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Bauman v. Butowsky", 
+            "case_number": "1:18-cv-01191"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "@StormyDaniels v. Keith Davidson and Michael Cohen", 
+            "case_number": "2:18-cv-05052"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Snyder and Andrew McCabe v. DOJ", 
+            "case_number": "1:18-cv-01389"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. James Wolfe", 
+            "case_number": "1:18-cr-00170-1"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "United States v. Elizabeth Holmes", 
+            "case_number": "5:18-cr-00258-1"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Joshua Schulte", 
+            "case_number": "1:17-cr-00548-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Beata Mariana de Jesus Mejia-Mejia v. @ICEgov", 
+            "case_number": "1:18-cv-01445"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "M.G.U. v. Kirstjen Nielsen", 
+            "case_number": "1:18-cv-01458"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "Flores v. Barr", 
+            "case_number": "2:85-cv-04544"
+        }, 
+        {
+            "court": "N.D. Ill.", 
+            "name": "W.S.R. v. Sessions", 
+            "case_number": "1:18-cv-04265"
+        }, 
+        {
+            "court": "N.D. Ill.", 
+            "name": "C.D.A. v. Sessions", 
+            "case_number": "1:18-cv-04291"
+        }, 
+        {
+            "court": "D.C. Cir.", 
+            "name": "United States v. Manafort", 
+            "case_number": "18-3037"
+        }, 
+        {
+            "court": "W.D. Wash.", 
+            "name": "Padilla v. @ICEgov", 
+            "case_number": "2:18-cv-00928"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Velasquez v. Sessions  et al", 
+            "case_number": "1:18-cv-01506"
+        }, 
+        {
+            "court": "W.D. Wash.", 
+            "name": "Washington v. Trump", 
+            "case_number": "2:18-cv-00939"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. @WaltDisneyCo", 
+            "case_number": "1:18-cv-05800"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Netyksho et al", 
+            "case_number": "1:18-cr-00215-12"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "United States v. Balian", 
+            "case_number": "2:18-cr-00345-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Butina", 
+            "case_number": "1:18-mj-00073-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Butina", 
+            "case_number": "1:18-cr-00218-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Lopez-Sales v. Sessions", 
+            "case_number": "1:18-cv-01700"
+        }, 
+        {
+            "court": "D. Ore.", 
+            "name": "ICE Detainees v. Salazar", 
+            "case_number": "3:18-cv-01349"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "M.M.M. v. Sessions", 
+            "case_number": "1:18-cv-01759"
+        }, 
+        {
+            "court": "W.D. Wash.", 
+            "name": "Washington v. Dep't of State", 
+            "case_number": "2:18-cv-01115"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "In Re Grand Jury Investigation", 
+            "case_number": "1:18-gj-00034"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "Stephanie Clifford v. Donald J. Trump", 
+            "case_number": "2:18-cv-06893"
+        }, 
+        {
+            "court": "D.C. Cir.", 
+            "name": "In Re Grand Jury Investigation", 
+            "case_number": "18-03052"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Michael Cohen", 
+            "case_number": "1:18-cr-00602-1"
+        }, 
+        {
+            "court": "S.D. Cal.", 
+            "name": "United States v. Duncan Hunter", 
+            "case_number": "3:18-cr-03677-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Patten", 
+            "case_number": "1:18-cr-00260-1"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Christopher Collins", 
+            "case_number": "1:18-cr-00567-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Roy Moore v. Sacha Baron Cohen", 
+            "case_number": "1:18-cv-02082"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "United States v. Hyok", 
+            "case_number": "2:18-mj-01479-1"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "Unsworth v. @elonmusk", 
+            "case_number": "2:18-cv-08048"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "In Re Petition for the Release of the Watergate \"Road Map\"", 
+            "case_number": "1:18-mc-00125"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Merkley v. Trump", 
+            "case_number": "1:18-cv-02226"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States Securities and Exchange Commission v. Musk", 
+            "case_number": "1:18-cv-08865"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "State Of New York et al v. United States Department of Commerce et al", 
+            "case_number": "1:18-cv-02921"
+        }, 
+        {
+            "court": "W.D. Va.", 
+            "name": "3:18-mj-00027-1 USA v Gillen", 
+            "case_number": "3:18-mj-00027-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Calixto v. U.S. Dep't of the Army", 
+            "case_number": "1:18-cv-01551"
+        }, 
+        {
+            "court": "N.D. Ill.", 
+            "name": "Illinois v. Chicago", 
+            "case_number": "1:17-cv-06260"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "Doar Rieck Kaley &amp; Mack v. Gates", 
+            "case_number": "1:18-cv-09282"
+        }, 
+        {
+            "court": "S.D. Fla.", 
+            "name": "Miller v. Gizmodo Media Group et al", 
+            "case_number": "1:18-cv-24227"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "Pen American Center, Inc. v. Trump", 
+            "case_number": "1:18-cv-09433"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Arpaio v. Cottle et al", 
+            "case_number": "1:18-cv-02387"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Edwards", 
+            "case_number": "1:18-mj-08861-1"
+        }, 
+        {
+            "court": "D.C. Cir.", 
+            "name": "In re Grand Jury Subpoena", 
+            "case_number": "18-3071"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Sayoc", 
+            "case_number": "1:18-mj-09159-1"
+        }, 
+        {
+            "court": "W.D. Pa.", 
+            "name": "United States v. Bowers", 
+            "case_number": "2:18-mj-01396-1"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "Doe et al v. The Trump Corporation et al", 
+            "case_number": "1:18-cv-09936"
+        }, 
+        {
+            "court": "W.D. Pa.", 
+            "name": "United States v. Bowers", 
+            "case_number": "2:18-cr-00292-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Pineda et al. v. Trump", 
+            "case_number": "1:18-cv-02534"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "East Bay Sanctuary Covenant et al v. Trump et al", 
+            "case_number": "3:18-cv-06810"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Sayoc", 
+            "case_number": "1:18-cr-00820-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "@CNN v. Trump et al", 
+            "case_number": "1:18-cv-02610"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Blumenthal et al. v. Trump", 
+            "case_number": "1:18-cv-02664"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Cohen", 
+            "case_number": "1:18-cr-00850-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "In re House of Representatives subpoena of James @Comey", 
+            "case_number": "1:18-mc-00174"
+        }, 
+        {
+            "court": "W.D. Okla.", 
+            "name": "Carter Page v. Democratic National Committee", 
+            "case_number": "5:18-cv-01019"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Corsi v. Mueller", 
+            "case_number": "1:18-cv-02885"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Hua", 
+            "case_number": "1:18-cr-00891-2"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "O.A. et al v. Trump", 
+            "case_number": "1:18-cv-02718"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Grace v. Whitaker", 
+            "case_number": "1:18-cv-01853"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "@Twitter v. Whitaker", 
+            "case_number": "4:14-cv-04480"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Veselnitskaya", 
+            "case_number": "1:18-cr-00904-1"
+        }, 
+        {
+            "court": "M.D. Fla.", 
+            "name": "United States v. Nettleton", 
+            "case_number": "3:19-cr-00001-1"
+        }, 
+        {
+            "court": "S.D. Ohio", 
+            "name": "@StormyDaniels v. Keckley", 
+            "case_number": "2:19-cv-00119"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Stone", 
+            "case_number": "1:19-cr-00018-1"
+        }, 
+        {
+            "court": "W.D. Wash.", 
+            "name": "United States v. Huawei Device Co.", 
+            "case_number": "2:19-cr-00010-1"
+        }, 
+        {
+            "court": "E.D.N.Y.", 
+            "name": "Federal Defenders of New York v. U.S. Bureau of Prisons", 
+            "case_number": "1:19-cv-00660-MKB-SMG"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Edwards", 
+            "case_number": "1:19-cr-00064-1"
+        }, 
+        {
+            "court": "D.S.D.", 
+            "name": "USA v. Erickson", 
+            "case_number": "4:19-cr-40015-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Corsi v. Stone", 
+            "case_number": "1:19-cv-00324"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Sims v. Trump", 
+            "case_number": "1:19-cv-00345"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Witt", 
+            "case_number": "1:19-cr-00043-5"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Alvarez et al v. Trump", 
+            "case_number": "1:19-cv-00404"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Center for Biological Diversity v. Trump", 
+            "case_number": "1:19-cv-00408"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "James Madison Project v. DOJ", 
+            "case_number": "1:17-cv-00144"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "California v. Trump", 
+            "case_number": "3:19-cv-00872"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "Sierra Club v. Trump", 
+            "case_number": "3:19-cv-00892"
+        }, 
+        {
+            "court": "M.D. Fla.", 
+            "name": "Johnson v. Trump", 
+            "case_number": "8:19-cv-00475"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Muthana v. Pompeo", 
+            "case_number": "1:19-cv-00445"
+        }, 
+        {
+            "court": "D.C. Cir.", 
+            "name": "United States v. Roger Stone", 
+            "case_number": "19-3012"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "Guiffre v. Maxwell", 
+            "case_number": "1:15-cv-07433"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Corsi v. InfoWars", 
+            "case_number": "1:19-cv-00656"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "In the Matter of the Application of WP Company et al", 
+            "case_number": "1:19-mc-00032"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Deripaska v. U.S. Department of the Treasury", 
+            "case_number": "1:19-cv-00727"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. @MichaelAvenatti", 
+            "case_number": "1:19-mj-02969-1"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "United States v. @MichaelAvenatti (Calif. case)", 
+            "case_number": "8:19-mj-00241-1"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. @MichaelAvenatti", 
+            "case_number": "1:19-mj-02927-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "@EPICprivacy v. DOJ (Mueller report)", 
+            "case_number": "1:19-cv-00810"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "In re Application for Order Authorizing Release of Grand Jury Material", 
+            "case_number": "1:19-mc-00045"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "In re Application to Unseal Dockets Related to Independent Counsel Investigation of President Clinton", 
+            "case_number": "1:18-mc-00019"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Public Citizen v. DeVos", 
+            "case_number": "1:19-cv-00986"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "United States v. Avenatti", 
+            "case_number": "8:19-cr-00061-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Craig", 
+            "case_number": "1:19-cr-00125-1"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "@JasonLeopold v. DOJ", 
+            "case_number": "1:19-cv-00957"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Trump v. Cummings", 
+            "case_number": "1:19-cv-01136"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "Trump et al v. Deutsche Bank and Capital One", 
+            "case_number": "1:19-cv-03826"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Avenatti", 
+            "case_number": "1:19-cr-00373-1"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Avenatti", 
+            "case_number": "1:19-cr-00374-1"
+        }, 
+        {
+            "court": "C.D. Cal.", 
+            "name": "In Re Eagan Avenatti, LLP", 
+            "case_number": "8:18-cv-01644"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Calk", 
+            "case_number": "1:19-cr-00366-1"
+        }, 
+        {
+            "court": "D.C. Cir.", 
+            "name": "19-5142 Donald Trump, et al v. Mazars USA, LLP", 
+            "case_number": "19-5142"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "In re Request to Make Public List of Matters Related to Special Counsel Investigation", 
+            "case_number": "1:19-mc-00058"
+        }, 
+        {
+            "court": "E.D.N.Y.", 
+            "name": "1:19-mj-00513-CLP USA v. Nader", 
+            "case_number": "1:19-mj-00513-CLP"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "Roy Moore v. Sacha Baron Cohen", 
+            "case_number": "1:19-cv-04977"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. @Omarosa", 
+            "case_number": "1:19-cv-01868"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "House Ways and Means Committee v. U.S. Treasury", 
+            "case_number": "1:19-cv-01974"
+        }, 
+        {
+            "court": "S.D.N.Y.", 
+            "name": "United States v. Epstein", 
+            "case_number": "1:19-cr-00490-1"
+        }, 
+        {
+            "court": "S.D. Fla.", 
+            "name": "United States v. Zhang", 
+            "case_number": "9:19-cr-80056-1"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "East Bay Sanctuary Covenant et al v. Barr et al", 
+            "case_number": "3:19-cv-04073"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Capital Area Immigrants' Rights Coalition v. Trump", 
+            "case_number": "1:19-cv-02117"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Trump v. House Ways and Means Committee", 
+            "case_number": "1:19-cv-02173"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "United States v. Facebook", 
+            "case_number": "1:19-cv-02184"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Application for the Release of Mueller Grand Jury Materials", 
+            "case_number": "1:19-gj-00048"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "Strzok v. Barr", 
+            "case_number": "1:19-cv-02367"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "House Judiciary Committee v. McGahn", 
+            "case_number": "1:19-cv-02379"
+        }, 
+        {
+            "court": "D.D.C.", 
+            "name": "McCabe v. Barr et al", 
+            "case_number": "1:19-cv-02399"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "San Francisco v. U.S. Citizenship and Immigration Services", 
+            "case_number": "3:19-cv-04717"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "California v. U.S. Dep't of Homeland Security", 
+            "case_number": "3:19-cv-04975"
+        }, 
+        {
+            "court": "N.D. Cal.", 
+            "name": "La Clinica de la Raza v. Trump", 
+            "case_number": "3:19-cv-04980"
         }
     ]
 }
