@@ -1,16 +1,18 @@
 courts = [
 
 		# Circuit courts
-		{ 'id': 'D.C. Cir.', 'url':'https://ecf.cadc.uscourts.gov/cmecf/servlet/TransportRoom?servlet=RSSGenerator' },
-		{ 'id': '2d. Cir.', 'url' : 'https://ecf.ca2.uscourts.gov/n/beam/servlet/TransportRoom?servlet=RSSGenerator' },
+		{ 'id': 'D.C. Cir.', 'url':'https://ecf.cadc.uscourts.gov/cmecf/servlet/TransportRoom?servlet=RSSGenerator', 'data_note':'The D.C. Circuit\'s data feed includes a limited set of docket entries.' },
+		{ 'id': '4th Cir.', 'url' : 'https://ecf.ca4.uscourts.gov/n/beam/servlet/TransportRoom?servlet=RSSGenerator' 'The Fourth Circuit\'s data feed includes a limited set of docket entries.' }, 
+		{ 'id': '2d. Cir.', 'url' : 'https://ecf.ca2.uscourts.gov/n/beam/servlet/TransportRoom?servlet=RSSGenerator', 'data_note':'The Second Circuit\'s data feed includes a limited set of docket entries.' },
 		{ 'id': '6th Cir.', 'url': 'https://ecf.ca6.uscourts.gov/cmecf/servlet/TransportRoom?servlet=RSSGenerator' },
 		{ 'id': '10th Cir.', 'url': 'https://ecf.ca10.uscourts.gov/cmecf/servlet/TransportRoom?servlet=RSSGenerator' },
 		{ 'id': 'Fed. Cir.', 'url' : 'https://ecf.cafc.uscourts.gov/cmecf/servlet/TransportRoom?servlet=RSSGenerator' },
-
+		
 		# District courts
-		{ 'id': 'M.D. Ala.', 'url': 'https://ecf.almd.uscourts.gov/cgi-bin/rss_outside.pl' },
+		{ 'id': 'M.D. Ala.', 'url': 'https://ecf.almd.uscourts.gov/cgi-bin/rss_outside.pl', 'data_note':'This court\'s data feed includes a limited set of docket entries.' },
 		{ 'id': 'S.D. Ala.', 'url':'https://ecf.alsd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'D. Alaska', 'url':'https://ecf.akd.uscourts.gov/cgi-bin/rss_outside.pl'},
+		{ 'id': 'D. Ariz.', 'url':'https://ecf.azd.uscourts.gov/cgi-bin/rss_outside.pl' },
 		{ 'id': 'E.D. Ark.', 'url':'https://ecf.ared.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'W.D. Ark.', 'url':'https://ecf.arwd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'C.D. Cal.', 'url':'https://ecf.cacd.uscourts.gov/cgi-bin/rss_outside.pl' },
@@ -38,24 +40,26 @@ courts = [
 		{ 'id': 'W.D. La.', 'url':'https://ecf.lawd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'D.N.M.I.', 'url': 'https://ecf.nmid.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'D. Maine', 'url': 'https://ecf.med.uscourts.gov/cgi-bin/rss_outside.pl'},
-		{ 'id': 'D. Mass.', 'url':'https://ecf.mad.uscourts.gov/cgi-bin/rss_outside.pl' },
-		{ 'id': 'E.D. Mich.', 'url': 'https://ecf.mied.uscourts.gov/cgi-bin/rss_outside.pl' },
+		{ 'id': 'D. Mass.', 'url':'https://ecf.mad.uscourts.gov/cgi-bin/rss_outside.pl', 'data_note': 'Only orders are available from this court.' },
+		{ 'id': 'E.D. Mich.', 'url': 'https://ecf.mied.uscourts.gov/cgi-bin/rss_outside.pl' , 'data_note': 'Only some filing are available from this court.' },
 		{ 'id': 'W.D. Mich.', 'url':'https://ecf.miwd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'S.D. Miss.', 'url': 'https://ecf.mssd.uscourts.gov/cgi-bin/rss_outside.pl' },
 		{ 'id': 'E.D. Mo.', 'url':'https://ecf.moed.uscourts.gov/cgi-bin/rss_outside.pl' },
 		{ 'id': 'W.D. Mo.', 'url':'https://ecf.mowd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'D. Mont.', 'url':'https://ecf.mtd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'D. Neb.', 'url':'https://ecf.ned.uscourts.gov/cgi-bin/rss_outside.pl' },
+		{ 'id': 'D. Nev.', 'url':'https://ecf.nvd.uscourts.gov/cgi-bin/rss_outside.pl' }, 
 		{ 'id': 'D.N.H.', 'url': 'https://ecf.nhd.uscourts.gov/cgi-bin/rss_outside.pl'},
-		{ 'id': 'D.N.J.', 'url':'https://ecf.njd.uscourts.gov/cgi-bin/rss_outside.pl' },
+		{ 'id': 'D.N.J.', 'url':'https://ecf.njd.uscourts.gov/cgi-bin/rss_outside.pl', 'data_note':'Only civil cases are available from this court.' },
 		{ 'id': 'D.N.M.', 'url': 'https://ecf.nmd.uscourts.gov/cgi-bin/rss_outside.pl' },
-		{ 'id': 'E.D.N.Y.', 'url':'https://ecf.nyed.uscourts.gov/cgi-bin/rss_outside.pl' },
+		{ 'id': 'E.D.N.Y.', 'url':'https://ecf.nyed.uscourts.gov/cgi-bin/readyDockets.pl', 'data_note':'The Eastern District\'s feed includes only complaints, orders and judgments.' },
 		{ 'id': 'N.D.N.Y.', 'url':'https://ecf.nynd.uscourts.gov/cgi-bin/rss_outside.pl' },
 		{ 'id': 'S.D.N.Y.', 'url':'https://ecf.nysd.uscourts.gov/cgi-bin/rss_outside.pl' },
 		{ 'id': 'E.D.N.C.', 'url':'https://ecf.nhd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'M.D.N.C.', 'url':'https://ecf.ncmd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'W.D.N.C.', 'url': 'https://ecf.ncwd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'E.D. Pa.', 'url':'https://ecf.paed.uscourts.gov/cgi-bin/rss_outside.pl' },
+		{ 'id': 'W.D. Pa.', 'url':'https://ecf.pawd.uscourts.gov/cgi-bin/rss_outside.pl' },
 		{ 'id': 'N.D. Ohio', 'url':'https://ecf.ohnd.uscourts.gov/cgi-bin/rss_outside.pl' },
 		{ 'id': 'S.D. Ohio', 'url':'https://ecf.ohsd.uscourts.gov/cgi-bin/rss_outside.pl'},
 		{ 'id': 'W.D. Okla.', 'url':'https://ecf.okwd.uscourts.gov/cgi-bin/rss_outside.pl'},
@@ -83,6 +87,8 @@ courts = [
 		{ 'id': 'D. Wyo.', 'url':'https://ecf.wyd.uscourts.gov/cgi-bin/rss_outside.pl'},
 
 		# Specialty courts
-		{ 'id': 'Ct. Cl.', 'url' : 'https://ecf.cofc.uscourts.gov/cgi-bin/rss_outside.pl'},
-				
+		{ 'id': 'Fed. Cl.', 'url' : 'https://ecf.cofc.uscourts.gov/cgi-bin/rss_outside.pl'},
+		
+		
+		
 	]
