@@ -1,117 +1,156 @@
-import dbconnect
-from twython import Twython
+import urllib2
+import MySQLdb
 import re
-from documentcloud import DocumentCloud
-import requests
+from bs4 import BeautifulSoup
+import multiprocessing
+import feedparser
+from pacer_rss_feeds import courts
 from io import BytesIO
-from bigcases_settings import settings
+import requests
+import sys
 import bigcases_list
+import random
 
+multitask = False
+threads = 4
+TIMEOUT = 30.0
 
-class caseShare:
-
-	VERBOSE = True
-
-	# List of  filing types that should not be tweeted (because they're routine and seldom interesting)
-	DONOTTWEET = ['Notice of Appearance','Pro Hac Vice', 'Appear Pro Hac Vice',  'Appearance', 'LCvR 7.1 Certificate of Disclosure - Corporate Affiliations/Financial Interests']
+TITLEPATTERN = re.compile('^(.*?) (.*?)', re.IGNORECASE)
 	
-	tw = Twython(
-		settings.twitter_app_key,
-		settings.twitter_app_secret,
-		settings.twitter_oauth_key,
-		settings.twitter_oauth_secret
-	)
+db = MySQLdb.connect('localhost','USERNAME','PASSWORD','court').cursor(MySQLdb.cursors.DictCursor)
+
+def checkUSV(t, d, c):
+	usv = 0
+	flags = [
+		re.compile('\d{4,}\s+USA\s+v. ', re.IGNORECASE),
+		re.compile('\d{4,}\s+United\s+States\s+v.\s+', re.IGNORECASE),
+		re.compile('\d{4,}\s+United\s+States\s+of\s+America\,*\s+v.\s+', re.IGNORECASE),
+		re.compile('\d{4,}\s+US\s+v. ', re.IGNORECASE),
+		re.compile('\d{4,}\s+U\.S\.A\.\s+v. ', re.IGNORECASE),
+	]
+	if c is not None:
+		if '-cv-' in c:
+			for flag in flags:
+				if flag.search(t):
+					usv = 1
+					if '[Complaint' in d:
+						usv = 2
+					break
 	
-	db = dbconnect.db(host=settings.db_host, user=settings.db_user, pwd=settings.db_pass, port=settings.db_port)
-	dc = DocumentCloud(settings.dc_user, settings.dc_pass)
+	return usv
 
-	# Re-arrange list of big cases into a dict with a unique ID 
-	bigcases = dict((item['court']+item['case_number'], item) for item in bigcases_list.cases)
+def checkFlags(t, d):
+	pf = None
 
+	return pf
+
+def bigCaseList():
+	l = []
+	for case in bigcases_list.cases:
+		l.append(case['court'] + case['case_number'])
+	return l
 	
-	def __init__(self):
-		if self.VERBOSE:
-			self.bigCasesMessage()
-		self.listNew()
-		return
-	
-	def listNew(self):
-		# List new filings in selected cases that haven't been tweeted yet
-		cases = self.db.getDict(""" SELECT * 
-						FROM court.pacer_raw
-						WHERE bigcase = 1
-						ORDER BY pid DESC
-						LIMIT 100 """)
-		for case in cases:
-			self.share(case)
-			self.update(case)
-		return
-
-	def update(self, case):
-		# Update a case after it's tweeted
-		self.db.run(""" UPDATE court.pacer_raw
-				SET bigcase = 2
-				WHERE pid = %s """,
-				(case['pid'], ))
-
-	def twitter_upload(self, image_list):
-		# Upload images of first four pages
-		media_ids = []
-		for image in image_list:
-			try:
-				res = requests.get(image)
-				res.raise_for_status()
-				uploadable = BytesIO(res.content)
-				response = self.tw.upload_media(media=uploadable)
-				media_ids.append(response['media_id'])
-			except:
-				pass
-		return media_ids
-				
-	def share(self, case):
-		# Post a new filing to Twitter
-		uid = case['court'] + case['case_number']
-		DP1 = re.compile('\[(.*?)\].*?<a href="(.*?)"', re.IGNORECASE)
-		DP2 = re.compile('\[(.*?)\]', re.IGNORECASE)
-		d = case['description']
-		media_ids = []
-		typ = DP2.search(d).group(1)
-		if case['dcid'] is not None:
-			# Best case: We have the document on DC, and probably attached images
-			link = case['document_location']
-			nd = DP2.search(d).group(1) + '\n\n' + link
-			doc = self.dc.documents.get(case['dcid'])
-			images = doc.normal_image_url_list[:4]
-			if len(images) > 0:
-				media_ids = self.twitter_upload(images)
-			
-		elif DP1.search(d):
-			# If the document hasn't made it to DC, send the PACER link
-			link = DP1.search(d).group(2)
-			nd = DP1.search(d).group(1) + '\n\nDoc. on PACER: ' + link
-		elif DP2.search(d):
-			# If there is no document, send a link to the PACER docket for the case
-			nd = DP2.search(d).group(1) + '\n\nPACER Docket: ' + case['link']
+def checkBigCase(court, case_number):
+#	print bigcases
+	bigcase = 0
+	if case_number is not None:
+		if court + case_number in bigcases:
+			bigcase = 1
 		else:
-			nd = False		
-		if nd:	
-			if typ not in self.DONOTTWEET:
-				msg = 'New filing in %s: %s' % (self.bigcases[uid]['name'], nd )
-				try:
-					if len(media_ids) > 0:
-						self.tw.update_status(status = msg, media_ids = media_ids)
-					else:
-						self.tw.update_status(status = msg)
-				except Exception, e:
-					print '##' + str(e)
-					pass
+			bigcase = 0
+	return bigcase
 
-		return
+def checkObserved(court, case_number, title, link):
+	# Check whether this case already exists in the pacer_observed table
+	# First apply some rules based on what will be interesting
+	if case_number is not None:
+		if '-cr-' in case_number or '-ms-' in case_number or '-mis' in case_number \
+			or '-sw-' in case_number or '-mc-' in case_number or '-mj-' in case_number \
+			or '-ec-' in case_number or '-ml-' in case_number or '-gj-' in case_number:
 
-	def bigCasesMessage(self):
-		print '# Checking for new filings in: '
-		for case in bigcases_list.cases:
-			print '  -> %s (%s, %s)' % (case['name'], case['court'], case['case_number'])
+			if court in('D.D.C.') \
+				or ('grand jury sub' in title.lower() and court not in('E.D. Pa.','E.D. Mich.')) \
+				or (('-sw-' in case_number or '-mc-' in case_number or '-ec-' in case_number or '-ms-' in case_number or '-mi' in case_number) and court in('C.D. Cal.', 'E.D. Pa.', 'S.D.N.Y.')):
+				
+					db.execute(""" SELECT COUNT(*) AS c
+										FROM court.pacer_observed
+										WHERE court = %s
+											AND case_number = %s """,
+									(court, case_number, ))
+					c = db.fetchone()['c']
+					if c == 0:
 
+						db.execute(""" REPLACE INTO court.pacer_observed
+										(court, case_number, title, detected, link)
+									VALUES(%s, %s, %s, NOW(), %s) """,
+									(court, case_number, title, link))
+						db.execute(""" COMMIT """)
+
+def processFeed(court):
+	print "# QUERYING " + court['id']
+	try:
+		url = court['url'] + '?x=' + str(int(random.random() * 10000))
+		rss = requests.get(court['url'], timeout = TIMEOUT)
+		stream = BytesIO(rss.content)
+		feed = feedparser.parse(stream)
+	except Exception, e:
+		print "#### " + str(e)
+#		sys.exit(0)
+		return False
+
+#	db.execute(""" INSERT INTO log.scrape_log(t,v) VALUES(%s, %s) """, ('pacer-rss',court['id'],))
+#	db.execute(""" COMMIT; """)
+	
+	for item in feed.entries:
+		m = re.search(TITLEPATTERN, item.title)
+		if m:
+			case_number = m.group(1)
+		else:
+			case_number = None
+		if not checkGuid(item.guid):
+			cn = case_number
+			if cn is None:
+				cn = ''
+			print ' -> Adding to ' + court['id'] + ' ' + cn + ': %s' % item.description[:20]
+			pf = checkFlags(item.title, item.description)
+			usv = checkUSV(item.title, item.description, case_number)
+			bigcase = checkBigCase(court['id'], case_number)
+			checkObserved(court['id'], case_number, item.title[:253], item.link)
+			
+			if pf == 1:
+				print '    HIT: %s' % item.description
+			db.execute(""" INSERT INTO court.pacer_raw(court, preflag, case_number, title, guid, modified, pubdate, description, link, bigcase, usv)
+									VALUES(%s, %s, %s, %s, %s, NOW(), %s, %s, %s, %s, %s) """,
+									(court['id'], pf, case_number, item.title[:253], item.guid, item.published, item.description, item.link, bigcase, usv))
+
+def checkGuid(guid):
+	db.execute(""" SELECT COUNT(*) AS c
+							FROM court.pacer_raw
+							WHERE guid = %s """, (guid, ))
+	c = db.fetchone()['c']
+	if c > 0:
+		return True
+	else:
+		return False
+
+def setStatus():
+	db.execute(""" REPLACE INTO court.bigcases_status(k,v)
+					VALUES(%s,%s)""",
+					('last-feed','complete'))
 		
-s = caseShare()
+if __name__ == '__main__':
+	bigcases = bigCaseList()
+	
+	if multitask:
+		pool = multiprocessing.Pool(processes=threads)
+	for court in courts:
+		if multitask:
+			pool.apply_async(processFeed, args=(court, ))
+		else:
+			processFeed(court)
+	if multitask:
+		pool.close()
+		pool.join()
+
+	setStatus()
+		
