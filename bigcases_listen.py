@@ -69,7 +69,7 @@ from pacer_rss_feeds import courts
 
 
 # Approved users by Twitter screen name
-APPROVED = ['bradheath', 'npenzenstadler', ]
+APPROVED = ['', ]
 
 # Lists of outgoing messages
 #SAY SOMETHING TO UNAUTHORIZED USERS WHO GIVE A COMMAND
