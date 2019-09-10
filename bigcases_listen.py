@@ -64,7 +64,7 @@ import requests
 import re
 #from __future__ import unicode_literals
 from io import BytesIO
-from twython import Twython
+from on import Twython
 from pacer_rss_feeds import courts
 
 
@@ -321,10 +321,7 @@ if __name__ == '__main__':
 	reply = False
 
 	tw = Twython(
-		'gbSMTxVXuEDhwaRALxP4xuUce',
-		'yItP8Ix0j4JxXur9sTpuWetSR4syCtu0SlUKCgImWjJqb7DjUG',
-		 '827523329527541761-ZV7G10HtjO9s8AhsO1hAyQYs9XtfYjy',
-		 'LIuPTnQWDkFIdTIDzfoVHWMREOPIGokDNL3icQCoWinjY'
+		# creds
 	)
 
 	keep_trying()
